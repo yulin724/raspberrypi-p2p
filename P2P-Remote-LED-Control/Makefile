@@ -1,6 +1,6 @@
 # Sample makefile
 
-all: Device Client
+all: Device
 
 cc=gcc
 link=ld
@@ -11,11 +11,5 @@ includes=include
 Device: Device.cpp
 	gcc $(cflags) $< -o $@ $(libs)
 
-Client: Client.cpp
-	gcc $(cflags) $< -o $@ $(libs)
-
-start_device:
-	LD_LIBRARY_PATH=. ./Device STAR-000004-DRJJH
-
 clean:
-	-rm Device Client
+	-rm Device
